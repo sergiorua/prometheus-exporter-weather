@@ -1,0 +1,64 @@
+server:
+  port: 8080
+  metrics_path: "/metrics"
+  health_path: "/health"
+  read_timeout: 30s
+  write_timeout: 30s
+
+weather:
+  api_key: "${OPENWEATHER_API_KEY}"
+  base_url: "https://api.openweathermap.org/data/2.5"
+  timeout: 10s
+
+cities:
+  - name: "London"
+    country: "UK"
+    coordinates:
+      lat: 51.5074
+      lon: -0.1278
+  - name: "New York"
+    country: "US"
+    coordinates:
+      lat: 40.7128
+      lon: -74.0060
+  - name: "Tokyo"
+    country: "JP"
+    coordinates:
+      lat: 35.6762
+      lon: 139.6503
+  - name: "Paris"
+    country: "FR"
+    coordinates:
+      lat: 48.8566
+      lon: 2.3522
+  - name: "Berlin"
+    country: "DE"
+    coordinates:
+      lat: 52.5200
+      lon: 13.4050
+  - name: "Lima"
+    country: "PE"
+    coordinates:
+      lat: -12.0464
+      lon: -77.0428
+  - name: "Leeds"
+    country: "UK"
+    coordinates:
+      lat: 53.8008
+      lon: -1.5491
+  - name: "Madrid"
+    country: "ES"
+    coordinates:
+      lat: 40.4168
+      lon: -3.7038
+
+scraping:
+  interval: 1h
+  timeout: 30s
+  retry_attempts: 3
+  retry_delay: 10s
+
+logging:
+  level: "info"
+  format: "json"
+  output: "stdout"
